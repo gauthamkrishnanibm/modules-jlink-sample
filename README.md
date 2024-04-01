@@ -5,14 +5,14 @@ Requires Java.
 ## Environment Setup
 To run this sample, first download zip or clone this repo - to clone:
 ```shell
-git clone git@github.com:gauthamkrishnanibm/jakarta-concurrency-demo.git
+git clone git@github.com:gauthamkrishnanibm/modules-jlink-sample.git
 ```
 
-Step 1: Compile the classes
+## Step 1: Compile the classes
 ```shell
 javac -d mods/com.foo.bar/ com.foo.bar/module-info.java com.foo.bar/com/foo/bar/HelloWorld.java
 ```
-Step 2: Create jar file
+## Step 2: Create jar file
 ```shell
 mkdir mlib
 ```
@@ -20,7 +20,7 @@ mkdir mlib
 jar --create --file=mlib/com.foo.bar.hello.jar --module-version=0.0.1 --main-class=com.foo.bar.HelloWorld -C mods/com.foo.bar/ .
 ```
 
-Step 3: Test the JAR file to make sure that it’s working
+## Step 3: Test the JAR file to make sure that it’s working
 ```shell
 java --module-path=mlib --module=com.foo.bar
 ```
@@ -39,13 +39,13 @@ requires java.logging
 contains com.foo.bar
 ```
 
-Step 4: Creating a custom runtime image using jlink
+## Step 4: Creating a custom runtime image using jlink
 ```shell
 jlink --module-path=$JAVA_HOME/jmods:mlib --add-modules=com.foo.bar --output=testRuntimeImage --strip-debug --no-header-files
 contains com.foo.bar
 ```
 
-step 5: Running the application from the custom runtime image
+## step 5: Running the application from the custom runtime image
 ```shell
 ./testRuntimeImage/bin/java --module com.foo.bar
 ```
@@ -54,7 +54,7 @@ output:
 INFO: Hello World!
 ```
 
-step 6: Checking only the bare minimum modules have been added
+## step 6: Checking only the bare minimum modules have been added
 ```shell
 ./testRuntimeImage/bin/java --list-modules com.foo.bar
 ```
