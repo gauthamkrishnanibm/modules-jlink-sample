@@ -18,15 +18,16 @@ java --module-path=mlib --module=com.foo.bar
 ```
 output:
 ```shell
-Hola, Mundo!
+INFO: Hello World!
 ```
 ```shell
 java --module-path=mlib --describe-module com.foo.bar
 ```
 output:
 ```shell
-com.foo.bar@0.0.1 file:///Users/z0ltan/dev/playground/helloworld_jlink/mlib/com.foo.bar.hello.jar
+com.foo.bar@0.0.1 file:///helloworld_jlink/mlib/com.foo.bar.hello.jar
 requires java.base mandated
+requires java.logging
 contains com.foo.bar
 ```
 
@@ -36,16 +37,27 @@ jlink --module-path=$JAVA_HOME/jmods:mlib --add-modules=com.foo.bar --output=tes
 contains com.foo.bar
 ```
 
-step5: Running the application from the custom runtime image
+step 5: Running the application from the custom runtime image
 ```shell
 ./testRuntimeImage/bin/java --module com.foo.bar
-bin/java --module com.foo.bar
 ```
 output:
 ```shell
-Hola, Mundo!
-contains com.foo.bar
+INFO: Hello World!
 ```
+
+step 6: Checking only the bare minimum modules have been added
+```shell
+./testRuntimeImage/bin/java --list-modules com.foo.bar
+```
+output:
+```shell
+com.foo.bar@0.0.1
+java.base@18.0.2.1
+java.logging@18.0.2.1
+```
+
+
 
 
 
