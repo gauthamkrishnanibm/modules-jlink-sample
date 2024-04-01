@@ -1,5 +1,13 @@
 # Sample to demonstrate modules and jlink
 
+Requires Java.
+
+## Environment Setup
+To run this sample, first download zip or clone this repo - to clone:
+```shell
+git clone git@github.com:gauthamkrishnanibm/jakarta-concurrency-demo.git
+```
+
 Step 1: Compile the classes
 ```shell
 javac -d mods/com.foo.bar/ com.foo.bar/module-info.java com.foo.bar/com/foo/bar/HelloWorld.java
