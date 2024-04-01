@@ -7,6 +7,7 @@ To run this sample, first download zip or clone this repo - to clone:
 ```shell
 git clone git@github.com:gauthamkrishnanibm/modules-jlink-sample.git
 ```
+From inside the modules-jlink-sample directory,
 
 ## Step 1: Compile the classes
 ```shell
