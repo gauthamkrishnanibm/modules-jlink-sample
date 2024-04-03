@@ -1,6 +1,6 @@
 # Sample to demonstrate modules and jlink
 
-Requires Java.
+Requires Java 9 or above
 
 ## Environment Setup
 To run this sample, first download zip or clone this repo - to clone:
