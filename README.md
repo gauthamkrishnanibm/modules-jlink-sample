@@ -1,6 +1,7 @@
 # Sample to demonstrate modules and jlink
 
-Requires Java 9 or above. IBM Semueru Runtimes Java can be obtained here
+Requires Java 9 or above. IBM Semueru Runtimes Java can be obtained [here](https://developer.ibm.com/languages/java/semeru-runtimes/downloads/).
+.
 
 ## Environment Setup
 To run this sample, first download zip or clone this repo - to clone:
